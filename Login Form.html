@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="Images/logo1.png" type="image/png">	
+<title>Login Form</title>
+<script type="text/javascript">
+function login_form() {
+    var valid = true;
+    if (document.login_form.login_name.value == "") {
+        alert("Please fill in the user name field");
+        document.login_form.login_name.focus();
+        valid = false;
+    } else if (document.login_form.password.value == "") {
+        alert("Please fill in the password field");
+        document.login_form.password.focus();
+        valid = false;
+    } else {
+		window.location.href="Login Form.html";
+	}
+    return valid;
+}
+</script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("Images/bg11.jpg"); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    margin: 10px; /* Remove default body margin */
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <form name="login_form" method="post" action="" onSubmit="return login_form();">
+        <h1>Login</h1>
+        <input type="text" name="login_name" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+</body>
+</html>

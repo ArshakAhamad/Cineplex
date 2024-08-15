@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="Images/logo1.png" type="image/png">
+    <title>Seat Booking</title>
+    <link rel="stylesheet" href="Style.css">
+    <style type="text/css">
+        .container .screen p {
+            font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana, sans-serif;
+            color: #000; /* You can change the color as desired */
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #000000;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 24px;
+            transition: all 0.5s;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Movie Seat Booking</h2>
+        <div class="screen">
+            <p>
+              <script type="text/javascript" src="script.js"></script>
+            SCREEN</p>
+        </div>
+        <div class="seats">
+            <div class="row">
+                <div class="seat silver available">S1</div>
+                <div class="seat silver available">S2</div>
+                <div class="seat silver available">S3</div>
+                <div class="seat silver available">S4</div>
+                <div class="seat silver available">S5</div>
+                <div class="seat silver available">S6</div>
+                <div class="seat silver available">S7</div>
+                <div class="seat silver available">S8</div>
+                <div class="seat silver available">S9</div>
+                <div class="seat silver available">S10</div>
+                <div class="seat silver available">S11</div>
+                <div class="seat silver available">S12</div>
+                <div class="seat silver available">S13</div>
+                <div class="seat silver available">S14</div>
+                <div class="seat silver available">S15</div>
+                <div class="seat silver available">S16</div>
+                <div class="seat silver available">S17</div>
+                <div class="seat silver available">S18</div>
+                <div class="seat silver available">S19</div>
+                <div class="seat silver available">S20</div>
+                <div class="seat silver available">S21</div>
+                <div class="seat silver available">S22</div>
+                <div class="seat silver available">S23</div>
+                <div class="seat silver available">S24</div>
+            </div>
+            <div class="row">
+                <div class="seat gold available">G1</div>
+                <div class="seat gold available">G2</div>
+                <div class="seat gold available">G3</div>
+                <div class="seat gold available">G4</div>
+                <div class="seat gold available">G5</div>
+                <div class="seat gold available">G6</div>
+                <div class="seat gold available">G7</div>
+                <div class="seat gold available">G8</div>
+                <div class="seat gold available">G9</div>
+                <div class="seat gold available">G10</div>
+                <div class="seat gold available">G11</div>
+                <div class="seat gold available">G12</div>
+                <div class="seat gold available">G13</div>
+                <div class="seat gold available">G14</div>
+                <div class="seat gold available">G15</div>
+                <div class="seat gold available">G16</div>
+                <div class="seat gold available">G17</div>
+                <div class="seat gold available">G18</div>
+                <div class="seat gold available">G19</div>
+                <div class="seat gold available">G20</div>
+                <div class="seat gold available">G21</div>
+                <div class="seat gold available">G22</div>
+                <div class="seat gold available">G23</div>
+                <div class="seat gold available">G24</div>
+            </div>
+            <div class="row">
+                <div class="seat platinum available">P1</div>
+                <div class="seat platinum available">P2</div>
+                <div class="seat platinum available">P3</div>
+                <div class="seat platinum available">P4</div>
+                <div class="seat platinum available">P5</div>
+                <div class="seat platinum available">P6</div>
+                <div class="seat platinum available">P7</div>
+                <div class="seat platinum available">P8</div>
+                <div class="seat platinum available">P9</div>
+                <div class="seat platinum available">P10</div>
+                <div class="seat platinum available">P11</div>
+                <div class="seat platinum available">P12</div>
+                <div class="seat platinum available">P13</div>
+                <div class="seat platinum available">P14</div>
+                <div class="seat platinum available">P15</div>
+                <div class="seat platinum available">P16</div>
+                <div class="seat platinum available">P17</div>
+                <div class="seat platinum available">P18</div>
+                <div class="seat platinum available">P19</div>
+                <div class="seat platinum available">P20</div>
+                <div class="seat platinum available">P21</div>
+                <div class="seat platinum available">P22</div>
+                <div class="seat platinum available">P23</div>
+                <div class="seat platinum available">P24</div>
+            </div>
+        </div>
+        <div class="info">
+            <p>Movie: Avengers</p>
+            <p>Time: 21:00</p>
+            <p>Seats: <span id="selectedSeats">0</span></p>
+            <p>Total Seats: <span id="totalSeats">0</span></p>
+            <a href="Invoice.html" class="button" id="bookNowButton"><span>Book Now</span></a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('bookNowButton').addEventListener('click', function() {
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            const seatDetails = Array.from(selectedSeats).map(seat => seat.textContent);
+            localStorage.setItem('selectedSeats', JSON.stringify(seatDetails));
+        });
+    </script>
+</body>
+</html>

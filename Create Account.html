@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="Images/logo1.png" type="image/png">
+    <title>Create New Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+               background-image: url("Images/bg9.jpg"); /* Specify the path to your background image */
+               background-size: cover; /* Cover the entire viewport */
+               background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="submit"],
+        input[type="reset"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="submit"]:focus,
+        input[type="reset"]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Information</h1>
+        <form name="EmpDataentry" action="Connect Database.php" method="post">
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="firstname" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="Age">Age:</label>
+            <input type="number" name="Age" id="Age" required>
+
+            <label for="mobile">Mobile:</label>
+            <input type="text" name="mobile" id="mobile" required>
+
+            <input type="submit" name="submit" value="Send">
+            <input type="reset" name="Reset" value="Clear">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="Images/logo1.png" type="image/png">	
+<title>Parking Availability</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://plus.unsplash.com/premium_photo-1661916866784-cdea580d93f7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFya2luZyUyMGxvdHxlbnwwfHwwfHx8MA%3D%3D/Img1.jfif') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        text-align: center;
+    }
+    h1 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #333;
+    }
+    button {
+        background-color: #007BFF;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    #availability {
+        font-size: 20px;
+        margin-top: 30px;
+        font-weight: bold;
+    }
+    #parkingAvailability {
+        display: none;
+        color: #28a745;
+    }
+    #noParkingAvailability {
+        display: none;
+        color: #dc3545;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Parking Availability</h1>
+    <button onclick="checkParkingAvailability()">Check Availability</button>
+    <div id="availability">
+        <p id="parkingAvailability">Parking is available!</p>
+        <p id="noParkingAvailability">Sorry, parking is full.</p>
+    </div>
+</div>
+<script>
+    // Function to simulate checking parking availability
+    function checkParkingAvailability() {
+        // Simulate random availability (true or false)
+        var isAvailable = Math.random() < 0.5; // Adjust the probability as needed
+        // Display appropriate message based on availability
+        if (isAvailable) {
+            document.getElementById("parkingAvailability").style.display = "block";
+            document.getElementById("noParkingAvailability").style.display = "none";
+        } else {
+            document.getElementById("parkingAvailability").style.display = "none";
+            document.getElementById("noParkingAvailability").style.display = "block";
+        }
+        // Optionally, you can send this information to a server for more accurate data
+    }
+</script>
+</body>
+</html>

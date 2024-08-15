@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<!-- Favicon Link -->
+<link rel="icon" href="Images/logo1.png" type="image/png">
+<title>CinePlex Cinemas</title>  /-
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #EFEFEF;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #BCBCBC;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.footer {
+    background-color: #FFFFFF;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.bottom-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.payment-options,
+.address,
+.additional-info {
+    margin: 0 20px;
+}
+
+.payment-options img,
+.address img {
+    width: 50px;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#tour,
+#Upcoming {
+    padding: 64px 16px;
+}
+
+#tour h2,
+#Upcoming h2 {
+    text-align: center;
+}
+
+.w3-third img {
+    width: 100%;
+    height: auto;
+}
+
+.w3-third {
+    margin-bottom: 32px;
+}
+
+.w3-modal-content {
+    background-color: #867F7F;
+}
+
+.w3-container.w3-white p {
+    margin: 8px 0;
+}
+
+blockquote h1 {
+    font-family: 'Sofia', sans-serif;
+    font-size: 60px;
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 24px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+</head>
+<body>
+    
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="Login Form.html" target="_blank">Log In</a>
+  <a href="#" onclick="document.getElementById('FAQModal').style.display='block'">FAQ's</a>
+  <a href="#" onclick="document.getElementById('FeedbackModal').style.display='block'">Feedback</a>
+  <a href="Create Account.html" target="_blank">Create Account</a>
+  <a href="Parking Availability.html" target="_blank">Check Parking Availability</a>    
+</div>    
+
+<!-- FAQ's Modal -->
+<div id="FAQModal" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top w3-card-4">
+    <header class="w3-container w3-teal w3-center w3-padding-32"> 
+      <span onclick="document.getElementById('FAQModal').style.display='none'" 
+     class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+      <h2 class="w3-wide"><i class="fa fa-info w3-margin-right"></i>FAQ's</h2>
+    </header>
+    <div class="w3-container">
+      <p>Why Become An Online Member<br>
+      5 Simple Steps To Buy Tickets Online<br>
+      Charges For Booking Tickets Online?<br>
+      Can I Book Tickets In Advance?<br>
+      Can I Cancel Tickets Booked Online And Get A Refund?<br>
+      Can I cancel the ticket booked through Partner platform like BMS, Paytm etc and get a refund?<br>
+      Can I cancel only part of the tickets?<br>
+      Is the facility available on tickets bought from Cinema?<br>
+      What is the amount of refund I will get on cancellation of ticket?<br>
+      How can my tickets be cancelled?<br>
+      Can tickets can be cancelled immediately?<br>
+      When will refund be processed?<br></p>
+      <button class="w3-button w3-red w3-section" onclick="document.getElementById('FAQModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Feedback Modal -->
+<div id="FeedbackModal" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top w3-card-4">
+
+    <header class="w3-container w3-teal w3-center w3-padding-32"> 
+      <span onclick="document.getElementById('FeedbackModal').style.display='none'" 
+     class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+      <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Feedback</h2>
+    </header>
+    <div class="w3-container">
+      <p><label><i class="fa fa-shopping-cart"></i> Name</label></p>
+      <input class="w3-input w3-border" type="text" placeholder="Name: "> 
+      <input class="w3-input w3-border" type="text" placeholder="Message: ">
+      <input class="w3-input w3-border" type="text" placeholder="Mobile: "> 
+      <p><label><i class="fa fa-user"></i> Send To</label></p>
+      <input class="w3-input w3-border" type="text" placeholder="Enter email">
+      <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">Submit <i class="fa fa-check"></i></button>
+      <button class="w3-button w3-red w3-section" onclick="document.getElementById('FeedbackModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+      <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+    </div>
+  </div>
+</div>    
+    
+
+<blockquote>
+  <h1 align="center"><strong><em>CinEpleX- 3D - Cinemas</em></strong></h1>
+</blockquote>
+
+<h1><span style="font-size:30px;cursor:pointer" onclick="openNav()"><strong>&#9776; </strong></span>
+  
+  <strong>
+  <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "60%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}       
+  </script> 
+  
+  <script type="text/javascript">
+function mouseOver() {
+  document.getElementById("op").src = "Images/Promotion1.jpg";  
+}
+
+function mouseOut() {
+  document.getElementById("op").src = "Images/Promotion2.jpg";
+}
+  </script>
+  
+</strong></h1>
+<form>
+  <a href="https://www.google.com" target="_blank" onMouseOver="mouseOver()" onMouseOut="mouseOut()">
+    <img border="0" alt="hi" src="Images/Promotion1.jpg" id="op" width="1500" height="500" />
+  </a>
+</form>
+    
+<p align="center">
+  <div class="w3-black" id="tour">
+    <div class="w3-container w3-content">
+      <h2 align="center">NOW SHOWING</h2>
+      <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+      <ul class="w3-ul w3-border w3-white w3-text-grey">
+        <li class="w3-padding">
+          <h4>January <span class="w3-tag w3-red w3-margin-left">Sold out</span></h4>
+        </li>
+        <li class="w3-padding">
+          <h4>February <span class="w3-tag w3-red w3-margin-left">Sold out</span></h4>
+        </li>
+        <li class="w3-padding">
+          <h4>March <span class="w3-badge w3-right w3-margin-right">Hurry Up Now!</span></h4>
+        </li>
+      </ul>
+
+      <div class="w3-row-padding w3-padding-32">
+        <div class="w3-third w3-margin-bottom">
+  <img src="Images/LalSalam.jpg" alt="Lal Salam" class="w3-hover-opacity">
+  <div class="w3-container w3-white">
+    <p><b>Lal Salam</b></p>
+    <p>Format: 2D, 3D, IMAX 2D, IMAX 3D, 4DX, VIP 2D</p>
+ <a href="Seats.html" class="button"><span>Book Now</span></a>
+
+  </div>
+</div>
+
+        <div class="w3-third w3-margin-bottom">
+          <img src="Images/PC.jpg" alt="Pirates of the Caribbean" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Pirates of the Caribbean</b></p>
+            <p>Format: 2D, 3D, IMAX 2D, IMAX 3D, 4DX, VIP 2D</p>
+           <a href="Seats.html" class="button"><span>Book Now</span></a>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="Images/Billa.jpg" alt="Billa 2" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Billa 2</b></p>
+            <p>Format: 2D, 3D, IMAX 2D, IMAX 3D, 4DX, VIP 2D</p>
+          <a href="Seats.html" class="button"><span>Book Now</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</p>
+
+<div class="w3-black" id="Upcoming">
+  <div class="w3-container w3-content">
+    <h2 align="center">UPCOMING MOVIES</h2>
+    <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+    <ul class="w3-ul w3-border w3-white w3-text-grey">
+      <li class="w3-padding">
+        <h3>Upcoming to Cineplex!  <span class="w3-tag w3-red w3-margin-left">Just Watch The Trailer..Hurry Up Now!</span></h3>
+      </li>
+      <li class="w3-padding"> 
+        <h3><span class="w3-badge w3-right w3-margin-right">Coming Soon..!</span> </h3>
+      </li>
+    </ul>
+
+    <div class="w3-row-padding w3-padding-32">
+      <div class="w3-third w3-margin-bottom">
+        <img src="Images/Goat.jpg" alt="Goat" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Goat</b></p>
+          <p>Format: 2D, 3D, IMAX 2D, IMAX 3D, 4DX, VIP 2D</p>
+         <a href="https://www.youtube.com/watch?v=nJDclWEjGPA" class="button"><span>Play Trailer</span></a>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <img src="Images/GK.jpg" alt="Godzilla vs Kong" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Godzilla vs Kong</b></p>
+          <p>Format: 2D, 3D, IMAX 2D, IMAX 3D, 4DX, VIP 2D</p>
+          <a href="https://www.youtube.com/watch?v=qqrpMRDuPfc" class="button"><span>Play Trailer</span></a>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <img src="Images/KP.jpg" alt="Kungfu Panda 4" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Kungfu Panda 4</b></p>
+          <p>Format: 2D, 3D, IMAX 2D, IMAX 3D, 4DX, VIP 2D</p>
+          <a href="https://www.youtube.com/watch?v=_inKs4eeHiI" class="button"><span>Play Trailer</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p align="center">
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank"><img src="Images/facebook.png" alt="GitHub"></a>
+            <a href="https://x.com/" target="_blank"><img src="Images/social-media.png" alt="LinkedIn" height="34"></a>
+            <a href="mailto:arshakahamad55@gmail.com"><img src="Images/gmail.png" alt="Email"></a>
+        </div>
+        <p>&copy; 2024 Cineplex Limited. <br> All rights reserved.</p>
+    </div>
+</p>
+</body>
+</html>

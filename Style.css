@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    text-decoration-color: rgba(0,0,0,1.00);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.screen {
+    background-color: #ddd;
+    width: 100%;
+    height: 80px;
+    margin: 20px 0;
+    border-radius: 0px 0px 100px 100px;
+    line-height: 50px;
+    font-weight: bolder;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    text-decoration-color: rgba(186,181,181,1.00);
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #444;
+    cursor: pointer;
+    color: black; /* Default color for seat text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat.available {
+    background-color: #76b852; /* Green for available */
+}
+
+.seat.booked {
+    background-color: #e74c3c; /* Red for booked */
+    cursor: not-allowed;
+}
+
+.seat.silver {
+    background-color: #c0c0c0;
+    color: black; /* Black text for silver seats */
+}
+
+.seat.gold {
+    background-color: #ffd700;
+    color: black; /* Black text for gold seats */
+}
+
+.seat.platinum {
+    background-color: #e5e4e2;
+    color: black; /* Black text for platinum seats */
+}
+
+.seat.selected {
+    background-color: #6feaf6;
+}
+
+.info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0b7dda;
+}

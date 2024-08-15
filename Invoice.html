@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="Images/logo1.png" type="image/png">
+    <title>Invoice</title>
+    <style>
+		body {
+		 background-image:url("Images/img2.jpg")
+		}
+        .invoice {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .invoice h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .invoice p {
+            font-size: 18px;
+        }
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #000000;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 24px;
+            transition: all 0.5s;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 5px;
+            display: block;
+            text-align: center;
+            width: fit-content;
+            margin: 20px auto;
+        }
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        .button:hover span {
+            padding-right: 25px;
+        }
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice">
+        <h2>Invoice</h2>
+        <p>Movie: Avengers</p>
+        <p>Time: 21:00</p>
+        <p>Seats: <span id="invoiceSeats"></span></p>
+        <p>Total Price: <span id="totalPrice"></span></p>
+        <a href="index.html" class="button"><span>Go to Home</span></a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats')) || [];
+            const seatPrices = {
+                silver: 10,
+                gold: 15,
+                platinum: 20
+            };
+            let totalPrice = 0;
+            
+            selectedSeats.forEach(seat => {
+                if (seat.startsWith('S')) {
+                    totalPrice += seatPrices.silver;
+                } else if (seat.startsWith('G')) {
+                    totalPrice += seatPrices.gold;
+                } else if (seat.startsWith('P')) {
+                    totalPrice += seatPrices.platinum;
+                }
+            });
+
+            document.getElementById('invoiceSeats').textContent = selectedSeats.join(', ');
+            document.getElementById('totalPrice').textContent = '$' + totalPrice;
+        });
+    </script>
+</body>
+</html>
