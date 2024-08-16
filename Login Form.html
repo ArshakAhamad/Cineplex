@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="Images/logo1.png" type="image/png">	
@@ -16,8 +16,8 @@ function login_form() {
         document.login_form.password.focus();
         valid = false;
     } else {
-		window.location.href="Login Form.html";
-	}
+        window.location.href="Login Form.html";
+    }
     return valid;
 }
 </script>
@@ -27,18 +27,27 @@ body {
     background-image: url("Images/bg11.jpg"); /* Specify the path to your background image */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the background image */
-    margin: 10px; /* Remove default body margin */
+    margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the height to fill the viewport */
 }
 
 .container {
-    margin: 0 auto;
-    padding-top: 100px;
-    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background */
+    padding: 20px;
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 100%;
+    max-width: 400px; /* Max width for larger screens */
+    box-sizing: border-box;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -48,6 +57,7 @@ input[type="submit"] {
     padding: 10px;
     margin: 10px 0;
     box-sizing: border-box;
+    border-radius: 5px; /* Add slight rounding to input fields */
 }
 
 input[type="submit"] {
@@ -55,12 +65,24 @@ input[type="submit"] {
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        padding: 8px;
+    }
+}
 </style>
 </head>
 <body>
